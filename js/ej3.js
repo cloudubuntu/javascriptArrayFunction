@@ -6,6 +6,9 @@ let suma;
 let arraySuma=[];
 let sumaGral=0;
 
+let valor;
+let cantidad;
+
 for(let i=0; i<50; i++){
 
     dado1=parseInt((Math.random()*6)+1);
@@ -22,4 +25,39 @@ for(let i=0; i<50; i++){
 document.write("<br>"+arraySuma.length);
 
 document.write("<br> la suma gral de todo el array es: "+sumaGral);
+
+/*for(let i=0; i<arraySuma.length; i++){
+    valor=arraySuma[i];
+    for(let j=0; j<arraySuma.length;j++){
+        
+        if(posicion===arraySuma[j]){
+            
+        }
+    }
+}*/
+
+arraySuma.sort(function(a, b){
+    return a - b;
+});
+document.write("<br>"+arraySuma.length);
+document.write("<br>"+arraySuma[0]);
+document.write("<br> El array ordenado es: "+"<br>"+arraySuma);
+document.write("<br>La cantidad de repeticiones es la siguiente:");
+
+for(let i=0; i<arraySuma.length; i++){
+    if(valor!==arraySuma[i]){
+
+        valor=arraySuma[i];
+        cantidad=0;
+    for(let j=i; j<arraySuma.length; j++){
+        if(valor===arraySuma[j]){
+            cantidad++;
+        }
+    }
+    document.write("<br>"+valor+": "+cantidad);
+
+    }
+    
+    
+}
 
